@@ -1,0 +1,145 @@
+.calculator {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    background: #202020;
+    padding: 3px 3px;
+    border-radius: 5px;
+  }
+
+  &__top {
+    display: flex;
+    padding: 1px;
+    margin-bottom: 40px;
+  }
+  &__circle {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+
+    &--red {
+      background: #FF5053;
+    }
+    &--yellow {
+      background: #F8BB40;
+    }
+
+    &--green {
+      background: #2CC64B;
+    }
+  }
+  &__middle {
+    padding: 0 1px;
+  }
+  &__input{
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    text-align: right;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 30px;
+    padding: 0 5px;
+
+    &::placeholder {
+      color: #fff;
+    }
+  }
+}
+
+.value {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  &__item {
+    padding: 1px;
+  }
+  &__button {
+    width: calc(314px / 4 - 2px);
+    height: 50px;
+    background: #323232;
+    color: #FFFFFF;
+    border: none;
+    outline: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    & span {
+      display: inline-block;
+      transform: rotate(10deg);
+      // font-size: 15px;
+    }
+    & sub {
+      font-size: 15px;
+    }
+
+    & sup {
+      font-size: 15px;
+    }
+    &:hover {
+      background: #3B3B3B;
+    }
+    &:active {
+      background: #323232;
+    }
+
+    &--color {
+      background: #3B3B3B;
+      &:hover {
+        background: #323232;
+      }
+      &:active {
+        background: #292929;
+      }
+    }
+
+    &--equally {
+      background: #BAD7E0;
+      color: rgba(0, 0, 0);
+      &:hover {
+        background: #A9C4CE;
+      }
+      &:active {
+        background: #9AB2BC;
+        color: rgba(0, 0, 0, .3);
+      }
+    }
+
+    &--backspace {
+      font-size: 0;
+
+      &::before {
+        content: '\2190';
+        font-size: 15px;
+      }
+    }
+
+    &--hide {
+      font-size: 0;
+
+      & sup {
+        font-size: 0;
+      }
+      & sub {
+        font-size: 0;
+      }
+
+      &:hover {
+        background: #323232;
+      }
+      &:active {
+        background: #323232;
+      }
+    }
+  }
+}
